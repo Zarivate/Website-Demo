@@ -1,16 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Divide as Hamburger } from "hamburger-react";
+import { Button } from "./Button";
+import "./Navbar.css";
 
 function Navbar() {
   const [isOpen, setOpen] = useState(false);
+  const [button, setButton] = useState(true);
 
   const closeMobileMenu = () => setOpen(false);
+
+  // Function that removes and or displays a button depending on the screen size
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  // In order to prevent sign-up button from showing up every time user refreshes page
+  useEffect(() => {
+    showButton();
+  }, []);
+
+  window.addEventListener("resize", showButton);
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             TEST
           </Link>
           <div className="menu-icon">
@@ -50,6 +69,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
+          {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
         </div>
       </nav>
     </>
