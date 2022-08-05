@@ -33,7 +33,13 @@ function Navbar() {
             TEST
           </Link>
           <div className="menu-icon">
-            <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
+            <Hamburger
+              toggled={isOpen}
+              toggle={setOpen}
+              size={35}
+              distance="lg"
+              easing="ease-in"
+            />
           </div>
           <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">

@@ -73,6 +73,7 @@
 
 .menu-icon {
   display: none;
+  height: 40%;
 }
 
 @media screen and (max-width: 960px) {
@@ -82,6 +83,7 @@
 
   .nav-menu {
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
     width: 100%;
     height: 90vh;
