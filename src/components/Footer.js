@@ -46,7 +46,7 @@ function Footer() {
             <h2>Contact Us</h2>
             <Link to="/">Testimonials</Link>
             <Link to="/">Careers</Link>
-            <Link to="/">Ivestors</Link>
+            <Link to="/">Investors</Link>
             <Link to="/">Sponsorship</Link>
           </div>
         </div>
