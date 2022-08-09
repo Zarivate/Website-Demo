@@ -1,7 +1,7 @@
 // This file holds the custom hook to handle any submissions on the signUp page
 import { useState, useEffect } from "react";
 
-const useForm = (Validate) => {
+const useForm = (callback, Validate) => {
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -10,6 +10,7 @@ const useForm = (Validate) => {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // For whenever the user types something into the input fields
   const handleChange = (e) => {
@@ -24,7 +25,15 @@ const useForm = (Validate) => {
     e.preventDefault();
 
     setErrors(Validate(values));
+    setIsSubmitting(true);
   };
+
+  // If any errors are detected, then they are displayed
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+      callback();
+    }
+  }, [errors]);
 
   return { handleChange, values, handleSubmit, errors };
 };
