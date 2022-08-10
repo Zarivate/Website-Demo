@@ -9,7 +9,7 @@ export default function SignUp({ submitForm }) {
     Validate
   );
   return (
-    <div className="form-content-right">
+    <div className="form-content">
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-inputs">
           <label htmlFor="username" className="form-label">

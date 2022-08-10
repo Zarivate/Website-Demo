@@ -3,37 +3,23 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  text-align: left;
+  min-width: 100%;
+  min-height: 100%;
+  /* In order to get it so no whitespace is there when zooming out and or into the image, do 
+  image height/image width * 100 to get percentage alongside having the height be 0; 
+  padding-bottom: 149.68%;
+  height: 0;  */
 }
 
 .form-container {
   margin: 100px auto;
-  width: 1000px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  padding-bottom: 1rem;
+  width: 400px;
   position: relative;
   border-radius: 10px;
-  height: 600px;
+  height: 500px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.form-content-left {
-  background: linear-gradient(
-    90deg,
-    rgb(39, 176, 255) 0%,
-    rgb(0, 232, 236) 100%
-  );
-  border-radius: 10px 0 0 10px;
-  position: relative;
-}
-
-.form-img {
-  width: 80%;
-  height: 80%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .form-img-2 {
@@ -52,14 +38,15 @@
   color: #fff;
 }
 
-.form-content-right {
-  border-radius: 0 10px 10px 0;
+.form-content {
   position: relative;
   background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
+  border-radius: 10px;
 }
 
 .form {
   position: absolute;
+  border-radius: 10px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -182,29 +169,10 @@
     width: 100%;
   }
 
-  /* .form-img {
-    width: 80%;
-    height: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } */
-
-  .form-content-left {
-    width: 0%;
-    height: 0%;
-    /* background: linear-gradient(
-      90deg,
-      rgb(39, 176, 255) 0%,
-      rgb(0, 232, 236) 100%
-    );
-    border-radius: 10px 0 0 10px; */
+  .form-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
     position: relative;
-  }
-
-  .form-content-right {
-    align-items: center;
-    justify-content: center;
   }
 }

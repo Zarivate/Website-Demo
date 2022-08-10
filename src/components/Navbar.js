@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Divide as Hamburger } from "hamburger-react";
 import { Button } from "./Button";
+import { WiAlien } from "react-icons/wi";
+import { IconContext } from "react-icons";
 import "./Navbar.css";
 
 function Navbar() {
@@ -30,7 +32,15 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            TEST
+            <IconContext.Provider
+              value={{
+                size: 45,
+                color: "yellow",
+                className: "global-class-name",
+              }}
+            >
+              TEST <WiAlien />
+            </IconContext.Provider>
           </Link>
           <div className="menu-icon">
             <Hamburger
