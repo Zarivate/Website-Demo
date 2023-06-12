@@ -22,7 +22,7 @@ export default function Login() {
         {!isSubmitted ? (
           <>
             <div className="form-content">
-              <form className="form" onSubmit={handleSubmit}>
+              <form className="form" onSubmit={submitForm}>
                 <div className="form-inputs">
                   <label htmlFor="email" className="form-label">
                     Email
@@ -33,7 +33,7 @@ export default function Login() {
                     name="email"
                     className="form-input"
                     placeholder="Enter your email"
-                    value={loginEmail}
+                    value={values.email}
                     onChange={handleChange}
                   />
                   {errors.email && <p>{errors.email}</p>}
@@ -48,7 +48,7 @@ export default function Login() {
                     name="password"
                     className="form-input"
                     placeholder="Enter your password"
-                    value={loginPassword}
+                    value={values.password}
                     onChange={handleChange}
                   />
                   {errors.password && <p>{errors.password}</p>}

@@ -26,3 +26,7 @@ export default function Validate(values) {
 
   return errors;
 }
+
+export function ValidateLogin(values) {
+  console.log("Howdy");
+}
